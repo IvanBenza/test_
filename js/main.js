@@ -4,7 +4,7 @@ function Init() {
   let url = "https://api.privatbank.ua/p24api/pubinfo?json&exchange&coursid=5";
   
   console.log("init");
-  const categoryArr = [
+  const categoryyArr = [
     "sport",
     "entertainment",
     "health",
@@ -12,13 +12,13 @@ function Init() {
     "technology"
   ];
   Request(url, GetCurrency);
-  for (let i = 0; i < categoryArr.length; i++) {
+  for (let i = 0; i < categoryyArr.length; i++) {
     NewsRequest(categoryArr[i], GetNews);
   }
 }
 
-function NewsRequest(category, callback) {
-  let url = `https://newsapi.org/v2/top-headlines?country=ua&category=${category}&apiKey=18f1c87e444741aca30db0a569bba999`;
+function NewsRequest(categoryy, callback) {
+  let url = `https://newsapi.org/v2/top-headlines?country=ua&category=${categoryy}&apiKey=18f1c87e444741aca30db0a569bba999`;
   let xhr = new XMLHttpRequest();
   xhr.open("GET", url, true);
   xhr.send();
@@ -82,7 +82,7 @@ function GetCurrency(data) {
   }
 }
 
-function GetNews(category, data) {
+function GetNews(categoryy, data) {
   if (category === "sport") {
     var sport = document.querySelector("#sport");
   } else if (category === "health") {
